@@ -5,23 +5,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to First problem</title>
-	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/css/design.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
 <div id="container">
-	<h1>Welcome to First problem!</h1>
-	<ul>
-		<li>
-			<a href="users/">User Home page</a>
-		</li>
-		<li>
-			<a href="users/registration">Registration</a>
-		</li>
-		<li>
-			<a href="users/login">Login</a>
-		</li>
-	</ul>
+	<h1 class="text-center" >Welcome to First problem!</h1>
+	
+		<div class="text-center" ><a class="p-3 mb-2 bg-primary text-white" href="users/">User Home page</a></div>
+
+		
+		<div class="text-center"><a class="p-3 mb-2 bg-primary text-white" href="users/registration">Registration</a></div>
+		
+
+		<div class="text-center"><a class="p-3 mb-2 bg-primary text-white" href="users/login">Login</a></div>
+	
 </div>
 
 </body>

@@ -8,40 +8,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <title>Welcome to Login Page</title>
+        <title>Profile</title>
   </head>
   <body>
-		<div class="container">
 		
-			<div class="row align-self-center">
-				<div class="col-lg-6 col-lg-offset-3 ">
-				<h1 class=text-center>User Login Form</h1>
+        <div class="row align-self-center">
+            <div class="col-lg-6 col-lg-offset-3 ">
+            <h1 class=text-center></h1>
 
-				<?php if (isset($_SESSION['success'])){ ?>
-                <div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
-                  <?php
-                }  ?>    
-				<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
-				<form action="" method="POST">  
-					<div class="from-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-					<input id="uname" type="text" class="form-control" name="uname" placeholder="User Name">
-					</div>
-					<div class="from-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-					<input id="password" type="password" class="form-control" name="password" placeholder="Password">
-					</div>
+            <?php if (isset($_SESSION['success'])){ ?>
+            <div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
+                <?php
+            }  ?>  
+            
+            HELLO, <?php echo $_SESSION['uname']; ?>    
 
-					<div>
-							<button class="btn btn-default" name="login">Login</button>
-					</div>
-					<div>
-							<button class="btn btn-default" name="register">Go to Register</button>
-					</div>
-			    </form>
-				</div>
-			</div>
-		</div> 
+            </div>
+        </div>
   
   <!-- Optional JavaScript; choose one of the two! -->
 
