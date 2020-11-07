@@ -23,57 +23,57 @@
 					</div>
 					<div class="form-group">
 						<label>Full Name</label>
-						<input type="text" name="name" class="form-control" value="<?php echo set_value('name'); ?>" />
+						<input type="text" name="name" class="form-control" value="<?php echo set_value('name'); ?>" placeholder = "Name"/>
 						<span class="text-danger"><?php echo form_error('name'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>User ID</label>
-						<input type="text" name="studentid" class="form-control" value="<?php echo set_value('studentid'); ?>" />
+						<input type="text" name="studentid" class="form-control" value="<?php echo set_value('studentid'); ?>" placeholder = "user id"/>
 						<span class="text-danger"><?php echo form_error('studentid'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Gender</label>
-						<input type="text" name="gender" class="form-control" value="<?php echo set_value('gender'); ?>" />
+						<input type="text" name="gender" class="form-control" value="<?php echo set_value('gender'); ?>" placeholder = "gender"/>
 						<span class="text-danger"><?php echo form_error('gender'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Designation</label>
-						<input type="text" name="designation" class="form-control" value="<?php echo set_value('designation'); ?>" />
+						<input type="text" name="designation" class="form-control" value="<?php echo set_value('designation'); ?>" placeholder = "designation"/>
 						<span class="text-danger"><?php echo form_error('designation'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>User type</label>
-						<input type="text" name="utype" class="form-control" value="<?php echo set_value('utype'); ?>" />
+						<input type="text" name="utype" class="form-control" value="<?php echo set_value('utype'); ?>" placeholder = "user type"/>
 						<span class="text-danger"><?php echo form_error('utype'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Birth date</label>
-						<input type="text" name="bdate" class="form-control" value="<?php echo set_value('bdate'); ?>" />
+						<input type="text" name="bdate" class="form-control" value="<?php echo set_value('bdate'); ?>" placeholder = "birth date"/>
 						<span class="text-danger"><?php echo form_error('bdate'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Updated date</label>
-						<input type="text" name="udate" class="form-control" value="<?php echo set_value('udate'); ?>" />
+						<input type="text" name="udate" class="form-control" value="<?php echo set_value('udate'); ?>" placeholder = "updated date"/>
 						<span class="text-danger"><?php echo form_error('udate'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Address</label>
-						<input type="text" name="address" class="form-control" value="<?php echo set_value('address'); ?>" />
+						<input type="text" name="address" class="form-control" value="<?php echo set_value('address'); ?>" placeholder = "address"/>
 						<span class="text-danger"><?php echo form_error('address'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>District</label>
-						<input type="text" name="district" class="form-control" value="<?php echo set_value('district'); ?>" />
+						<input type="text" name="district" class="form-control" value="<?php echo set_value('district'); ?>" placeholder = "district"/>
 						<span class="text-danger"><?php echo form_error('district'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Phone</label>
-						<input type="text" name="phone" class="form-control" value="<?php echo set_value('phone'); ?>" />
+						<input type="text" name="phone" class="form-control" value="<?php echo set_value('phone'); ?>" placeholder = "phone"/>
 						<span class="text-danger"><?php echo form_error('phone'); ?></span>
 					</div>
 					<div class="form-group">
 						<label>Session</label>
-						<input type="text" name="session" class="form-control" value="<?php echo set_value('session'); ?>" />
+						<input type="text" name="session" class="form-control" value="<?php echo set_value('session'); ?>" placeholder = "session"/>
 						<span class="text-danger"><?php echo form_error('session'); ?></span>
 					</div>
 					<div class="form-group">
