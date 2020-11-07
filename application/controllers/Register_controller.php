@@ -12,7 +12,7 @@ class Register extends CI_Controller
 		parent::__construct();
 		$this->load->library('form_validation');
 		#$this->load->library('encrypt');
-		$this->load->model('register_model');
+		$this->load->model('Register_model');
 	}
 
 	function index()
