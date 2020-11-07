@@ -6,18 +6,27 @@
     <script src="https://kit.fontawesome.com/d8b376e1d5.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <link rel="stylesheet" href="C:\Users\sdmna\Desktop\Intern\intern-11-2020-problem01\assets\css\main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
     
 </head>
 <body>
     <div class="topnav">
         <a class="active" href="#home">LogIn <i class="fas fa-sign-in-alt"></i> </a>
     </div>
+    <h1>Registration Form</h1>     
+    <hr>
     <form action="action_page.php">
         <div class="container">
-            <h1>Registration Form</h1>
-          <h3>User</h3>
-          <hr>
+
           <table align="center" cellpadding="20">
+              <tr>
+                  <td colspan="3">
+                    <h3>User</h3>
+                    <hr>
+                  </td>
+ 
+              </tr>
               <tr>
                   <td>
                     <label for="Name"><b>Name</b></label>
@@ -31,10 +40,10 @@
               </tr>
               <tr>
                 <td>
-                    <label for="UID"><b>User ID</b></label>
+                    <label for="ID"><b>User ID</b></label>
                   </td>
                 <td colspan="2">
-                    <input type="text" placeholder="User ID" name="UID" id="UID" required>
+                    <input type="text" placeholder="User ID" name="ID" id="ID" required>
                 </td>
             </tr>
             <tr>
@@ -69,9 +78,13 @@
                 </td>
             </tr>
           </table>
-          <h3>Contact Info</h3>
-          <hr>
           <table align="center" cellpadding="20">
+              <tr>
+                  <td colspan="2">
+                    <h3>Contact Info</h3>                      
+                  </td>
+
+              </tr>
             <tr>
                 <td width="170px">
                     <label for="mobile"><b>Mobile no</b></label>
@@ -89,9 +102,12 @@
                 </td>
             </tr>
           </table>
-          <h3>Institute</h3>
+
           <hr>
           <table align="center" cellpadding="20">
+              <tr>
+                  <td colspan="2"><h3>Institute</h3></td>
+              </tr>
             <tr>
                 <td width="170px">
                     <label for="Institute"><b>Institute</b></label>
@@ -104,9 +120,9 @@
           <table align="center">
               <tr>
                   <td width="300px">
-                    <div align="center">
+                    <div align="left">
                         <p>Do you agree to our <a href="#">Terms ans Conditions.</a>
-                            <div class="p-t-15">
+                            <div class="p-t-15" align="left">
                                 <label class="radio-container m-r-55">Yes
                                     <input type="radio" checked="checked" name="exist">
                                     <span class="checkmark"></span>
@@ -126,13 +142,10 @@
           </table>
           <table align="center">
               <tr>
-                  <td width="750px">
+                  <td  width="750px"\>
                     <div>
                         <button type="submit" class="registerbtn"><b>Register</b></button>
                     </div>
-                  </td>
-                  <td>
-
                   </td>
               </tr>
           </table>
