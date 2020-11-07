@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d8b376e1d5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\sdmna\Desktop\Intern\intern-11-2020-problem01\assets\css\main.css">
+    
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">LogIn <i class="fas fa-sign-in-alt"></i> </a>
+    </div>
+    <form action="action_page.php">
+        <div class="container">
+            <h1>Registration Form</h1>
+          <h3>User</h3>
+          <hr>
+          <table align="center" cellpadding="20">
+              <tr>
+                  <td>
+                    <label for="Name"><b>Name</b></label>
+                  </td>
+                  <td width="300px">
+                    <input type="text" placeholder="First Name" name="Fname" id="Fname" required>
+                  </td>
+                  <td width="300px">
+                    <input type="text" placeholder="Last Name" name="Lname" id="Lname" required>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                    <label for="UID"><b>User ID</b></label>
+                  </td>
+                <td colspan="2">
+                    <input type="text" placeholder="User ID" name="UID" id="UID" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="psw"><b>Password</b></label>
+                </td>
+                <td colspan="2">
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="psw-confrim"><b>Confirm Password</b></label>
+                </td>
+                <td colspan="2">
+                    <input type="password" placeholder="Confirm Password" name="psw-onfrim" id="psw-confirm" required>
+      
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender"><b>Gender</b></label>
+                </td>
+                <td colspan="2">
+                    <select>
+                        <option disabled="disabled" selected="selected">Choose option</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                      </select>
+                </td>
+            </tr>
+          </table>
+          <h3>Contact Info</h3>
+          <hr>
+          <table align="center" cellpadding="20">
+            <tr>
+                <td width="170px">
+                    <label for="mobile"><b>Mobile no</b></label>
+                </td>
+                <td width="600px">
+                    <input type="number" placeholder="Mobile no" name="mobile" id="mobile" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Email"><b>Email</b></label>
+                  </td>
+                <td>
+                    <input type="text" placeholder="Email" name="Email" id="Email" required>
+                </td>
+            </tr>
+          </table>
+          <h3>Institute</h3>
+          <hr>
+          <table align="center" cellpadding="20">
+            <tr>
+                <td width="170px">
+                    <label for="Institute"><b>Institute</b></label>
+                  </td>
+                <td width="600px">
+                    <input type="text" placeholder="Institute" name="Institute" id="Institute" required>
+                </td>
+            </tr>
+          </table>
+          <table align="center">
+              <tr>
+                  <td width="300px">
+                    <div align="center">
+                        <p>Do you agree to our <a href="#">Terms ans Conditions.</a>
+                            <div class="p-t-15">
+                                <label class="radio-container m-r-55">Yes
+                                    <input type="radio" checked="checked" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                    <input type="radio" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div><br><br>
+                      </div>
+
+                  </td>
+                  <td width="450px">
+
+                  </td>
+              </tr>
+          </table>
+          <table align="center">
+              <tr>
+                  <td width="750px">
+                    <div>
+                        <button type="submit" class="registerbtn"><b>Register</b></button>
+                    </div>
+                  </td>
+                  <td>
+
+                  </td>
+              </tr>
+          </table>
+          
+ 
+         
+        </div>
+      
+        <div class="container signin">
+          <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+      </form>
+
+</body>
+</html>
