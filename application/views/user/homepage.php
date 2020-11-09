@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to First problem</title>
 
-</head>
-<body>
 
-<div id="container">
-	<h1>Welcome to First problem!</h1>	
+<h1 class="welcome" style="padding: 30px 0">Welcome to First problem!</h1>
+
+<?php
+  $ses->testvar = "Session variable";
+?>
+
+<?php
+  echo $this->sample->checkModel();
+?>
+
+<div ng-app="">
+  <p>Name : <input type="text" ng-model="name"></p>
+  <h1>Hello {{name}}</h1>
 </div>
 
-</body>
-</html>
+<script type="text/javascript">
+  $(document).ready(function(){
+    console.log("this is working");
+    $('.welcome').hide().slideDown(5000);
+  });
+</script>
