@@ -14,15 +14,28 @@
 		
         <div class="row align-self-center">
             <div class="col-lg-6 col-lg-offset-3 ">
+<<<<<<< Updated upstream
+=======
+            <h1 class=text-center>User Profile</h1>
+>>>>>>> Stashed changes
             <h1 class=text-center></h1>
 
             <?php if (isset($_SESSION['success'])){ ?>
             <div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
                 <?php
             }  ?>  
+<<<<<<< Updated upstream
             
             HELLO, <?php echo $_SESSION['uname']; ?>    
 
+=======
+          <form action="" method="POST"> 
+            <div>
+              <p>Login Succesful</p>
+							<button class="btn btn-default" name="logout">Logout</button>
+            </div>
+          </form>  
+>>>>>>> Stashed changes
             </div>
         </div>
   

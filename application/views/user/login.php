@@ -20,7 +20,12 @@
 				<?php if (isset($_SESSION['success'])){ ?>
                 <div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
                   <?php
+<<<<<<< Updated upstream
                 }  ?>    
+=======
+                }  ?>  
+				
+>>>>>>> Stashed changes
 				<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
 				<form action="" method="POST">  
 					<div class="from-group">
