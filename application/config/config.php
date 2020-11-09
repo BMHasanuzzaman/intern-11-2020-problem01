@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/CodeIgniter/';
+$config['base_url'] = 'http://localhost/BUETproject_on_PHP/VIS-gits/ntern-11-2020-problem01/';
 
 /*
 |--------------------------------------------------------------------------
