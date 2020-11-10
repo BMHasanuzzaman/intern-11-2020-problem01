@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h3>Email</h3>
       <input class="form-control" placeholder="Please enter email" name="email" type="text" autofocus>
       <h3>Password</h3>
-      <input class="form-control" placeholder="Please enter password" name="md5_pw" type="Password" autofocus>
+      <input class="form-control" placeholder="Please enter password" name="password" type="password" autofocus>
       <h3>Valid</h3>
       <input type="radio" name="valid" value="Yes"> Yes 
       <input type="radio" name="valid" value="No"> No<br>
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h3>District</h3>
       <input class="form-control" placeholder="Please enter district" name="district" type="text" autofocus>
       <h3>Phone No</h3>
-      <input class="form-control" placeholder="Please enter phone no" name="phoneno" type="text" autofocus>
+      <input class="form-control" placeholder="Please enter phone no" name="phone" type="text" autofocus>
       <h3>Session</h3>
       <input class="form-control" placeholder="Please enter session" name="session" type="text" autofocus>
 

@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <input class="form-control" placeholder="Please enter email" name="email" type="text" autofocus>
       
       <h3>Password</h3>
-      <input class="form-control" placeholder="Please enter password" name="md5_pw" type="Password" autofocus>
+      <input class="form-control" placeholder="Please enter password" name="password" type="password" autofocus>
       <h3>Valid</h3>
       <input type="radio" name="valid" value="Yes"> Yes 
       <input type="radio" name="valid" value="No"> No<br>
@@ -37,7 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       </div>
 	</form>
-</fieldset>
 </div>
 
 </body>
