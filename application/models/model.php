@@ -4,6 +4,7 @@ class model extends CI_Model {
 
     protected $User_table_name = "user";
     protected $User_table_name2 = "userdetail";
+    protected $User_table_name3 = "user_session";
 
     /**
      * Insert User Data in Database
@@ -14,6 +15,9 @@ class model extends CI_Model {
     }
     public function insert_user2($userData) {
         return $this->db->insert($this->User_table_name2, $userData);
+    }
+    public function insert_session($session) {
+        return $this->db->insert($this->User_table_name3, $session);
     }
 
 
@@ -27,6 +31,7 @@ class model extends CI_Model {
          * First Check Email is Exists in Database
          */
         $query = $this->db->get_where($this->User_table_name, array('email' => $userData['email']));
+
         if ($this->db->affected_rows() > 0) {
 
             $password = $query->row('md5_pw');
@@ -42,6 +47,7 @@ class model extends CI_Model {
                 return [
                     'status' => TRUE,
                     'data' => $query->row(),
+                    
                 ];
 
             } else {

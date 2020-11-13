@@ -10,6 +10,8 @@ class Users extends CI_Controller {
   	 		$this->load->model('model');
         $this->load->library('session');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">', '</p>');
+        $this->load->library('user_agent');
+        
 
 }
 
@@ -21,9 +23,7 @@ class Users extends CI_Controller {
 		$data['page_title'] = "User Registration";
         $this->load->view("user/homepage");
 	}
-    /**
-     * User Login
-     */
+    
 	public function login()
 	{
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -47,13 +47,18 @@ class Users extends CI_Controller {
             $this->load->model('model', 'UserModel');
             $result = $this->UserModel->check_login($login_data);
 
-            if (!empty($result['status']) && $result['status'] === TRUE) {
+            if (!empty($result['status']) && $result['status'] === FALSE) {
 
                 /**
                  * Create Session
                  * -----------------
                  * First Load Session Library
                  */
+                $this->session->set_flashdata('error_flashData', 'Invalid Email/Password.');
+                redirect('Users/login');
+            }
+            else{
+
                 $session_array = array(
                     'USER_ID'  => $result['data']->id,
                     'USERNAME'  => $result['data']->uname,
@@ -61,18 +66,35 @@ class Users extends CI_Controller {
                     'IS_ACTIVE'  => $result['data']->valid,
                 );
                 
-                $this->session->set_userdata($session_array);
+                $this->session->set_userdata($session_array); 
+
+                 $new_session = array(
+
+                    'user_id' =>  $result['data']->id,
+                    'session_id' => session_id(),
+                    'ipaddress' => $_SERVER['REMOTE_ADDR'],
+                    'browser' => $agent = $this->agent->browser(), 
+                    'os' => $agent = $this->agent->platform(),
+
+                    
+               
+                
+             );
+
+                   $this->session->set_userdata($new_session);
+                   $this->load->model('model');
+                   $result = $this->model->insert_session($new_session);
+
 
                 $this->session->set_flashdata('success_flashData', 'Login Success');
                 redirect('Users/panel');
 
-            } else {
+            } 
+               
 
-                $this->session->set_flashdata('error_flashData', 'Invalid Email/Password.');
-                redirect('Users/login');
             }
-        }
     }
+
     public function registration()
 	{
 
@@ -82,7 +104,7 @@ class Users extends CI_Controller {
     /**
      * User Registration for Student
      */
-	public function re_student()
+	public function register_student()
 	{
         $this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.uname]', [
             'is_unique' => 'The %s already exists. Please use a different username',
@@ -100,7 +122,7 @@ class Users extends CI_Controller {
         if ($this->form_validation->run() == FALSE)
         {
             $data['page_title'] = "User Registration";
-            $this->load->view("user/re_student");
+            $this->load->view("user/register_student");
         }
         else
         {   
@@ -120,8 +142,10 @@ class Users extends CI_Controller {
              */
             $this->load->model('model', 'UserModel');
             $result = $this->UserModel->insert_user($insert_data);
+            $this->load->model('model', 'UserModel');
+            $result1 = $this->UserModel->insert_user2($insert_data2);
 
-            if ($result == TRUE) {
+            if ($result && $result1 == TRUE) {
 
                 $this->session->set_flashdata('success_flashData', 'You have registered successfully.');
                 echo "successfully inserted";
@@ -138,7 +162,7 @@ class Users extends CI_Controller {
 	/**
      * User Registration for Teacher
      */
-	public function re_teacher()
+	public function register_teacher()
 	{
 		$this->form_validation->set_rules('full_name', 'Full Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.uname]', [
@@ -157,7 +181,7 @@ class Users extends CI_Controller {
         if ($this->form_validation->run() == FALSE)
         {
             $data['page_title'] = "User Registration";
-            $this->load->view("user/re_teacher");
+            $this->load->view("user/register_teacher");
         }
         else
         {   

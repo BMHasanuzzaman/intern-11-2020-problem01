@@ -21,11 +21,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="container">
   	<h2> Registration Page</h2>
 		<li>
-			<a href="re_student"><b>Registration for student</b></a>
+			<a href="register_student"><b> Student </b></a>
 		</li>
 		<li>
-			<a href="re_teacher"><b>Registration for teacher</b></a>
+			<a href="register_teacher"><b> Teacher </b></a>
 		</li>
+
 	</div>
 </div>
 </div>
