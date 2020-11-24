@@ -10,13 +10,14 @@ class Users extends CI_Controller {
   }
 	public function index()
 	{
-		$data['ses'] = $this->session;
-		$data['page'] = "user/homepage";
-		$this->load->view('layout/public/master', $data);
-    $this->load->model('sample');
+    $data['page_title'] = "homepage";
+    $this->load->view('layout/public/header', $data);
+		$this->load->view('user/homepage');
+    $this->load->view('layout/public/footer', $data);
 	}
 	public function registration()
 	{
+
     $this->load->helper(array('form'));
 		$this->load->library('form_validation');
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -60,9 +61,10 @@ class Users extends CI_Controller {
 
     }
 
-		$data['ses'] = $this->session;
-		$data['page'] = "user/registration";
-		$this->load->view('layout/public/master', $data);
+    $data['page_title'] = "Registration";
+    $this->load->view('layout/public/header', $data);
+		$this->load->view('user/registration');
+    $this->load->view('layout/public/footer', $data);
 
 	}
   public function login()
@@ -72,9 +74,10 @@ class Users extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-          $this->load->view('layout/public/header'); // Header File
-          $this->load->view("user/login");
-          $this->load->view('layout/public/footer'); // Footer File
+          $data['page_title'] = "Login";
+          $this->load->view('layout/public/header', $data);
+      		$this->load->view('user/login');
+          $this->load->view('layout/public/footer', $data);
         }
         else
         {
@@ -90,6 +93,8 @@ class Users extends CI_Controller {
             $result = $this->UserModel->check_login($login_data);
 
             if (!empty($result['status']) && $result['status'] === TRUE) {
+
+              session_regenerate_id();
 
                 /**
                  * Create Session
@@ -129,9 +134,10 @@ class Users extends CI_Controller {
 
     if ($this->form_validation->run() == FALSE)
     {
-      $this->load->view('layout/public/header'); // Header File
-      $this->load->view("user/studen_regi");
-      $this->load->view('layout/public/footer'); // Footer File
+      $data['page_title'] = "Student Register";
+      $this->load->view('layout/public/header', $data);
+  		$this->load->view('user/studen_regi');
+      $this->load->view('layout/public/footer', $data);
     }
     else
     {
@@ -161,6 +167,7 @@ class Users extends CI_Controller {
               if ($result && $result2 == TRUE) {
 
                 echo ' registration success';
+                redirect('Users/login');
             } else {
 
                 echo ' Try Again';
@@ -180,9 +187,10 @@ class Users extends CI_Controller {
 
     if ($this->form_validation->run() == FALSE)
     {
-      $this->load->view('layout/public/header'); // Header File
-      $this->load->view("user/teacher_regi");
-      $this->load->view('layout/public/footer'); // Footer File
+      $data['page_title'] = "Teacher Registration";
+      $this->load->view('layout/public/header', $data);
+  		$this->load->view('user/teacher_regi');
+      $this->load->view('layout/public/footer', $data);
     }
     else
     {
@@ -212,6 +220,7 @@ class Users extends CI_Controller {
               if ($result && $result2 == TRUE) {
 
                 echo ' registration success';
+                redirect ('Users/login');
             } else {
 
                 echo ' Try Again';
@@ -225,12 +234,49 @@ class Users extends CI_Controller {
 
   public function first_page()
 	{
+    $data['page_title'] = "First Page";
+    $this->load->view('layout/public/header', $data);
+		$this->load->view('user/first_page');
+    $this->load->view('layout/public/footer', $data);
 
-    $this->load->view('layout/public/header'); // Header File
-    $this->load->view("user/first_page");
-    $this->load->view('layout/public/footer'); // Footer File
 
-	}
 
+    }
+
+    public function test()
+   {
+       $data['page_title'] = "Test Page";
+       $this->load->view('_Layout/home/header.php', $data); // Header File
+       $this->load->view("user/test");
+       $this->load->view('_Layout/home/footer.php'); // Footer File
+
+
+   }
+
+    public function set_active_time() {
+       //getdatafromajaxcall
+       $active_time = $this->input->post('timeSpentOnSite');
+       $this->db->insert('user_activity',$active_time);
+       //query to match id & url
+       $this->db->where('id', $id);
+       $this->db->where('pageurl', $pageurl);
+       $query1 = $this->db->get('user_activity');
+       //update database active time
+           $this->db->set('active_time', "active_time+'$active_time'", FALSE);
+           $this->db->where('id', $id);
+           $this->db->where('pageurl', $pageurl);
+           $this->db->update('user_activity');
+   }
+
+
+   public function logout()
+   {
+    $remove_sessions = array('USER_ID', 'USERNAME','USER_EMAIL','IS_ACTIVE', 'USER_NAME');
+    $this->session->unset_userdata($remove_sessions);
+     session_destroy();
+
+
+     redirect('users/index');
+   }
 
 }

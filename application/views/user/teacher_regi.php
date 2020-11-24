@@ -1,3 +1,5 @@
+
+
 <div class="row justify-content-center">
 	<div class="col-8">
 		<h1>Teacher Registration Form</h1><br>
@@ -66,9 +68,9 @@
 
 
 
-		<div class="form-group">
-			<button type="submit" value="Register" class="btn btn-primary" />
-		</div>
+
+			<button type="submit" class="btn btn-primary">Register</button>
+
   <?= form_close() ?>
 		</form>
 	</div>

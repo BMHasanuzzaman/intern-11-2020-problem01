@@ -1,23 +1,43 @@
-
-
-<h1 class="welcome" style="padding: 30px 0">Welcome to First problem!</h1>
-
 <?php
-  $ses->testvar = "Session variable";
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<body>
+	<div class="container">
+    <div class="jumbotron">
+        <div id="container">
+	<h1>Welcome to VIS</h1>
+	<ul>
+		<li>
+			<a href="index">User Home page</a>
+		</li>
+		<li>
+			<a href="registration">Registration</a>
+		</li>
+		<li>
+			<a href="login">login</a>
+		</li>
+	</ul>
 
-<?php
-  echo $this->sample->checkModel();
-?>
+	</div>
+</div></div>
+<script>
+                        $(document).ready(function() {
+                          var start = new Date();
 
-<div ng-app="">
-  <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
-</div>
+                          $window.unload(function() {
+                              var end = new Date();
+                              $.ajax({
+                                url: current_url(),
+                                data: {'timeSpent': end - start},
+                                async: false
+                              })
+                           });
+                        });
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    console.log("this is working");
-    $('.welcome').hide().slideDown(5000);
-  });
-</script>
+
+                        </script>
+
+
+
+</body>
+</html>
